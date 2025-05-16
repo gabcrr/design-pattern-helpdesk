@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Histórico de Processamento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: tailwind.colors.sky
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen p-6">
+
+  <div class="max-w-3xl mx-auto space-y-6">
+    <h1 class="text-3xl font-bold text-primary-600 flex items-center gap-2">
+      <i data-lucide="book-open" class="w-7 h-7"></i>
+      Histórico de Processamento
+    </h1>
+
+    <div th:if="${notificacoes.isEmpty()}" class="text-gray-500">
+      Nenhuma notificação registrada.
+    </div>
+
+    <ul th:if="${notificacoes}" class="space-y-3">
+      <li th:each="n : ${notificacoes}" class="bg-white p-4 rounded shadow border-l-4 border-primary-500">
+        <div class="font-medium mt-1" th:text="${n.mensagem}">Solicitação registrada...</div>
+      </li>
+    </ul>
+
+    <div>
+      <a href="/" class="inline-flex items-center gap-2 text-gray-600 hover:text-primary-600">
+        <i data-lucide="arrow-left"></i>
+        Voltar para a tela inicial
+      </a>
+    </div>
+  </div>
+
+
+
+  <script>lucide.createIcons()</script>
+</body>
+</html>
