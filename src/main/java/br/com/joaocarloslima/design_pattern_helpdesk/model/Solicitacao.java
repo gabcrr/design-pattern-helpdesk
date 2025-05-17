@@ -26,7 +26,30 @@ public class Solicitacao {
     private TipoSolicitacao tipo; 
 
     @Enumerated(EnumType.STRING)
-    private Urgencia urgencia; 
+    private Urgencia urgencia;
 
-    
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
+    }
+
+    public Urgencia getUrgencia() {
+        return urgencia;
+    }
+
+    public void setUrgencia(Urgencia urgencia) {
+        this.urgencia = urgencia;
+    }
+
+    public TipoSolicitacao getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoSolicitacao tipo) {
+        this.tipo = tipo;
+    }
+
 }

@@ -26,7 +26,7 @@ public class SolicitacaoController {
     @Autowired
     private SolicitacaoService solicitacaoService;
 
-    @GetMapping
+    @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("solicitacao", new Solicitacao());
         model.addAttribute("tipos", TipoSolicitacao.values());
@@ -47,4 +47,11 @@ public class SolicitacaoController {
         model.addAttribute("notificacoes", notificacoes);
         return "log";
     }
+
+//    @GetMapping("/")
+//    public String index(Model model) {
+//        model.addAttribute("solicitacao", new Solicitacao());
+//        return "index";
+//    }
+
 }
